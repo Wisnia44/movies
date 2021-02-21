@@ -1,15 +1,17 @@
 FROM python:3.8-alpine
 
-WORKDIR /app
+WORKDIR /code
 
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
-ENV DEBUG 0
+ENV DEBUG 1
 
 RUN apk update \
-    && apk add --virtual build-deps gcc python3-dev musl-dev \
+    && apk add --virtual build-deps gcc python3-dev musl-dev libffi-dev rust openssl-dev \
     && apk add postgresql-dev \
+    && pip install --upgrade pip \
     && pip install psycopg2 \
+    && pip install cryptography==2.8 \
     && apk del build-deps
 
 COPY ./requirements.txt .
