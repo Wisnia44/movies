@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  <section class="log-in-form">
+    <h4 class="description">Sign up</h4>
+    {% if form.errors %}
+      <div class="alert alert-secondary" role="alert">
+        You've given wrong data!
+      </div>
+    {% endif %}
+
+    <form class="log-in-form" method="POST">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <input type="submit" value="Log in" class="btn btn-success">
+      <br/><br/>
+      <small>
+        <p><a href="{% url 'login' %}">Already have an account?</a></p>
+      </small>
+    </form>
+  </section>
+  
+{% endblock %}

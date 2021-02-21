@@ -37,6 +37,8 @@ ALLOWED_HOSTS = [
 # Application definition
 
 INSTALLED_APPS = [
+    'accounts',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -143,3 +145,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_DIRS = [path.join(BASE_DIR, "static")]
+
+LOGIN_REDIRECT_URL = '/'
+LOGIN_URL = '/login/'

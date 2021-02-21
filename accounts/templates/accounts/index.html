@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+	<div>
+		<div class="row">
+			<div class="col">
+				<h3>Movies web app</h3>
+				<h5>Web app to browse movie database</h5>
+				<p>Project is hosted on heroku at <strong><i><a href=https://intense-woodland-74165.herokuapp.com>https://intense-woodland-74165.herokuapp.com</a></i></strong></p>
+			</div>
+		</div>
+		<br/>
+		<div class="row">
+			<div class="col-6">
+				<h4>Funcinalities:</h4>
+				<ol>
+					<li>Browsing results are viewable on a website with basic layout with pagination</li> 
+					<li>Possibility to save favourites into local database.</li>
+				</ol>
+			</div>
+			<div class="col-6">
+				<h4>Local using instruction:</h4>
+				<ol>
+					<li>Clone the repository with <i>$git clone https://github.com/Wisnia44/movies.git`</i>;</li>
+					<li>Build docker images and run containers <i>$docker-compose up --build</i>;</li>
+					<li>Server is up and running at <i>http://0.0.0.0:8000/</i> !</li>
+				</ol>
+			</div>
+		</div>
+	<div>
+
+{% endblock %}

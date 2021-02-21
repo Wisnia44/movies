@@ -1,10 +1,10 @@
 FROM python:3.8-alpine
 
-WORKDIR /app
+WORKDIR /code
 
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
-ENV DEBUG 0
+ENV DEBUG 1
 
 RUN apk update \
     && apk add --virtual build-deps gcc python3-dev musl-dev \
