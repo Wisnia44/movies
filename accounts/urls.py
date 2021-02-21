@@ -16,4 +16,5 @@ urlpatterns = [
     path('signup/', SignUpView.as_view(), name='signup'),
     path('', IndexView.as_view(), name='index'),
     url('^', include('django.contrib.auth.urls')),
+    url(r'^oauth/', include('social_django.urls', namespace='social')),
 ]
