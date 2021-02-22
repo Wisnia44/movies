@@ -4,7 +4,7 @@ WORKDIR /code
 
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
-ENV DEBUG 1
+ENV DEBUG 0
 
 RUN apk update \
     && apk add --virtual build-deps gcc python3-dev musl-dev libffi-dev rust openssl-dev \
