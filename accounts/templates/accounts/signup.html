@@ -17,9 +17,13 @@
       <br/><br/>
       <small>
         <p><a href="{% url 'login' %}">Already have an account?</a></p>
-        <p><a href="{% url 'social:begin' 'github' %}">Signup with GitHub</a></p>
       </small>
     </form>
+  </section>
+  <div class="btn-group" role="group">
+      <a class="nav-link" href="{% url 'social:begin' 'github' %}"><button class="btn btn-outline-dark" type="submit">Login with GitHub</button></a>
+      <a class="nav-link" href="{% url 'social:begin' 'linkedin-oauth2' %}"><button class="btn btn-outline-dark" type="submit">Login with LinkedIn</button></a>
+    </div>     
   </section>
   
 {% endblock %}
