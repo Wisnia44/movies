@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  <section class="results">
+    <h4 class="description">Your saved movies</h4>
+    {% if object_list %}
+      <ul>
+        {% for movie in object_list %}
+          <li class="list-group-item">
+            <div class="row">
+              <div class="col-12 col-md-5 my-auto">
+                <p>{{movie.title}}</p>
+              </div>
+              <div class="col-4">
+                <p>Year: {{movie.year}}</p>
+              </div>
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>You haven't saved any movies yet.</p>
+    {% endif %}
+  </section>
+  <div class="pagination">
+    <span class="step-links">
+        {% if page_obj.has_previous %}
+            <a href="?t={{ search_title }}&y={{ search_year }}&page=1">&laquo; first</a>
+            <a href="?t={{ search_title }}&y={{ search_year }}&page={{ page_obj.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+        </span>
+
+        {% if page_obj.has_next %}
+            <a href="?t={{ search_title }}&y={{ search_year }}&page={{ page_obj.next_page_number }}">next</a>
+            <a href="?t={{ search_title }}&y={{ search_year }}&page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+    </span>
+  </div>
+  
+{% endblock %}
