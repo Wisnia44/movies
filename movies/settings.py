@@ -38,6 +38,7 @@ ALLOWED_HOSTS = [
 
 INSTALLED_APPS = [
     'accounts',
+    'films',
 
     'social_django',
 
